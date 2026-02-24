@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Noakhali Travel & Tours",
-    description: "Your Trusted Partner for Visa, Travel, and Official Documentation",
+    title: "Noakhali Travel & Tours | Visa, Hajj & Documentation Services",
+    description: "Licensed travel agency in Noakhali, Bangladesh. Expert in Hajj & Umrah packages, international visa processing, air ticketing, student visas, and official documentation.",
     type: "website",
     locale: "en_US",
     url: "https://noakhali-travel-tours.vercel.app",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noakhali Travel & Tours",
-    description: "Your Trusted Partner for Visa, Travel, and Official Documentation",
+    title: "Noakhali Travel & Tours | Visa, Hajj & Documentation Services",
+    description: "Licensed travel agency in Noakhali, Bangladesh. Expert in Hajj & Umrah packages, international visa processing, air ticketing, student visas, and official documentation.",
     images: ["/og-image.png"],
   },
 };
