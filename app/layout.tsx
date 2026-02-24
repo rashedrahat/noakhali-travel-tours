@@ -43,6 +43,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://noakhali-travel-tours.vercel.app",
     siteName: "Noakhali Travel & Tours",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Noakhali Travel & Tours" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noakhali Travel & Tours",
+    description: "Your Trusted Partner for Visa, Travel, and Official Documentation",
+    images: ["/og-image.png"],
   },
 };
 
