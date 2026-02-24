@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://noakhalitraveltours.com"),
+  metadataBase: new URL("https://noakhali-travel-tours.vercel.app"),
   title: "Noakhali Travel & Tours | Visa, Travel & Documentation Services",
   description:
     "Your trusted partner for Hajj & Umrah, visa processing, air ticketing, student visa, e-passport, and official documentation services in Noakhali, Bangladesh.",
@@ -41,7 +41,8 @@ export const metadata: Metadata = {
     description: "Your Trusted Partner for Visa, Travel, and Official Documentation",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/android-chrome-512x512.png", width: 512, height: 512 }],
+    url: "https://noakhali-travel-tours.vercel.app",
+    siteName: "Noakhali Travel & Tours",
   },
 };
 
