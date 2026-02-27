@@ -9,9 +9,11 @@
   --color-gold-dark: #a87615;
   --color-brand-green: #1A6B3A;
   --color-brand-green-light: #2a9b55;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1aab54;
   --color-background: #ffffff;
   --color-foreground: #171717;
-  --color-surface: #F4F7FB;
+  --color-surface: #FAF8F3;
 }
 
 :root {
@@ -38,6 +40,18 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   width: 100%;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Gradient text utility */

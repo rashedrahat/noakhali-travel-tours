@@ -27,7 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-navy-dark text-white">
+    <footer className="bg-white border-t border-navy/10 text-navy">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -43,11 +43,11 @@ export default function Footer() {
                 unoptimized
               />
               <div className="leading-tight">
-                <span className="block text-white font-bold text-lg leading-none">Noakhali</span>
+                <span className="block text-navy font-bold text-lg leading-none">Noakhali</span>
                 <span className="block text-gold text-[11px] font-semibold tracking-widest uppercase leading-none mt-0.5">Travel &amp; Tours</span>
               </div>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <p className="text-navy text-sm leading-relaxed mb-6">
               Your Trusted Partner for Visa, Travel, and Official Documentation.
               Serving clients from Noakhali and beyond.
             </p>
@@ -57,7 +57,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61588365380686"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold hover:text-navy text-white/70 flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-navy/8 hover:bg-gold hover:text-white text-navy flex items-center justify-center transition-all duration-200"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -66,14 +66,14 @@ export default function Footer() {
                 href="https://wa.me/8801740919659"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold hover:text-navy text-white/70 flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-navy/8 hover:bg-gold hover:text-white text-navy flex items-center justify-center transition-all duration-200"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
               <a
                 href="tel:+8801740919659"
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold hover:text-navy text-white/70 flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-navy/8 hover:bg-gold hover:text-white text-navy flex items-center justify-center transition-all duration-200"
                 aria-label="Phone"
               >
                 <Phone className="w-4 h-4" />
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-white mb-5 text-sm tracking-wider uppercase">
+            <h3 className="font-bold text-navy mb-5 text-sm tracking-wider uppercase">
               Quick Links
             </h3>
             <ul className="flex flex-col gap-3">
@@ -92,7 +92,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                    className="text-white/60 hover:text-gold text-sm transition-colors flex items-center gap-2 group"
+                    className="text-navy hover:text-gold text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-4 h-0.5 bg-gold/40 group-hover:bg-gold group-hover:w-6 transition-all duration-300 rounded-full" />
                     {link.label}
@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-white mb-5 text-sm tracking-wider uppercase">
+            <h3 className="font-bold text-navy mb-5 text-sm tracking-wider uppercase">
               Our Services
             </h3>
             <ul className="flex flex-col gap-3">
@@ -113,7 +113,7 @@ export default function Footer() {
                   <a
                     href="#services"
                     onClick={(e) => { e.preventDefault(); handleNavClick("#services"); }}
-                    className="text-white/60 hover:text-gold text-sm transition-colors flex items-center gap-2 group"
+                    className="text-navy hover:text-gold text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-4 h-0.5 bg-gold/40 group-hover:bg-gold group-hover:w-6 transition-all duration-300 rounded-full" />
                     {service}
@@ -125,25 +125,25 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold text-white mb-5 text-sm tracking-wider uppercase">
+            <h3 className="font-bold text-navy mb-5 text-sm tracking-wider uppercase">
               Contact Info
             </h3>
             <div className="flex flex-col gap-4">
               <a
                 href="tel:+8801740919659"
-                className="flex items-start gap-3 text-white/60 hover:text-gold transition-colors group"
+                className="flex items-start gap-3 text-navy hover:text-gold transition-colors group"
               >
                 <Phone className="w-4 h-4 mt-0.5 shrink-0 group-hover:text-gold" />
                 <span className="text-sm">+880 1740-919659</span>
               </a>
               <a
                 href="mailto:noakhalitraveltours@gmail.com"
-                className="flex items-start gap-3 text-white/60 hover:text-gold transition-colors group"
+                className="flex items-start gap-3 text-navy hover:text-gold transition-colors group"
               >
                 <Mail className="w-4 h-4 mt-0.5 shrink-0 group-hover:text-gold" />
                 <span className="text-sm break-all">noakhalitraveltours@gmail.com</span>
               </a>
-              <div className="flex items-start gap-3 text-white/60">
+              <div className="flex items-start gap-3 text-navy">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                 <span className="text-sm leading-relaxed">
                   Baitul Aman Court Masjid Market, 3rd Floor, Room No-427,
@@ -156,17 +156,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-navy/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-sm text-center sm:text-left">
+          <p className="text-navy text-sm text-center sm:text-left">
             &copy; {new Date().getFullYear()} Noakhali Travel &amp; Tours. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-white/40 hover:text-gold text-sm transition-colors group"
+            className="flex items-center gap-2 text-navy hover:text-gold text-sm transition-colors group"
           >
             Back to top
-            <span className="w-7 h-7 rounded-lg bg-white/10 group-hover:bg-gold/20 flex items-center justify-center transition-colors">
+            <span className="w-7 h-7 rounded-lg bg-navy/8 group-hover:bg-gold/20 flex items-center justify-center transition-colors">
               <ArrowUp className="w-3.5 h-3.5" />
             </span>
           </button>

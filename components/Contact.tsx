@@ -12,7 +12,7 @@ const contactItems = [
     value: "+880 1740-919659",
     href: "tel:+8801740919659",
     desc: "Click to call us directly",
-    color: "bg-blue-500/10 text-blue-500",
+    color: "bg-navy/10 text-navy",
   },
   {
     icon: MessageCircle,
@@ -20,7 +20,7 @@ const contactItems = [
     value: "+880 1740-919659",
     href: "https://wa.me/8801740919659",
     desc: "Chat with us on WhatsApp",
-    color: "bg-green-500/10 text-green-500",
+    color: "bg-whatsapp/10 text-whatsapp-dark",
   },
   {
     icon: Mail,
@@ -28,7 +28,7 @@ const contactItems = [
     value: "noakhalitraveltours@gmail.com",
     href: "mailto:noakhalitraveltours@gmail.com",
     desc: "Send us an email anytime",
-    color: "bg-red-500/10 text-red-500",
+    color: "bg-navy/10 text-navy",
   },
   {
     icon: Facebook,
@@ -36,7 +36,7 @@ const contactItems = [
     value: "noakhali travel & toures service",
     href: "https://www.facebook.com/profile.php?id=61588365380686",
     desc: "Follow us on Facebook",
-    color: "bg-indigo-500/10 text-indigo-500",
+    color: "bg-navy/10 text-navy",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function Contact() {
               href="https://wa.me/8801740919659"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-navy font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-gold/30 hover:-translate-y-1 text-base"
+              className="flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-whatsapp/30 hover:-translate-y-1 text-base"
             >
               <MessageCircle className="w-5 h-5" />
               Chat With Us on WhatsApp
