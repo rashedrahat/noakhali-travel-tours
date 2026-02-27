@@ -77,7 +77,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen md:h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Slideshow background */}
       <div className="absolute inset-0">
@@ -123,28 +123,28 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-14 sm:pb-28 lg:pb-24 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-14 sm:pb-20 lg:pb-16 flex flex-col items-center text-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-2.5 sm:gap-6 w-full"
+          className="flex flex-col items-center gap-2.5 sm:gap-4 lg:gap-3 w-full"
         >
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-[2rem] leading-tight sm:text-5xl lg:text-7xl font-bold text-white max-w-4xl drop-shadow-lg"
+            className="text-[1.9rem] leading-[1.1] sm:text-[2.75rem] lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl drop-shadow-lg"
           >
-            Your Trusted Partner for{" "}
-            <span className="gradient-text">Visa, Travel</span>
+            Your Trusted Partner for
             <br className="hidden sm:block" />
+            {" "}<span className="gradient-text whitespace-nowrap">Visa, Travel</span>
             {" "}&amp; Documentation
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
             variants={itemVariants}
-            className="text-white/80 text-sm sm:text-xl max-w-2xl leading-relaxed drop-shadow"
+            className="text-white/70 text-sm sm:text-lg max-w-xl leading-relaxed drop-shadow"
           >
             From Hajj &amp; Umrah packages to international visa processing — we handle
             everything with professionalism and care, right from Noakhali.
@@ -182,7 +182,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.7 }}
-          className="grid grid-cols-4 gap-2 sm:gap-6 mt-4 sm:mt-12 w-full max-w-3xl"
+          className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mt-4 sm:mt-8 lg:mt-6 w-full max-w-3xl"
         >
           {stats.map((stat) => (
             <div
@@ -201,7 +201,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.5 }}
-          className="flex items-center gap-2 mt-3 sm:mt-8"
+          className="flex items-center gap-2 mt-3 sm:mt-6 lg:mt-4"
         >
           {images.map((_, i) => (
             <button
