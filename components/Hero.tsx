@@ -77,7 +77,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen md:h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-svh md:h-svh flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Slideshow background */}
       <div className="absolute inset-0">

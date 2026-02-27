@@ -43,8 +43,8 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function WhyUs() {
@@ -52,24 +52,35 @@ export default function WhyUs() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 sm:py-24 overflow-hidden" style={{ background: "linear-gradient(135deg, #0f2347 0%, #1B3B6F 100%)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="py-16 sm:py-24 overflow-hidden relative"
+      style={{ background: "linear-gradient(135deg, #0a1628 0%, #1B3B6F 60%, #0f2347 100%)" }}
+    >
+      {/* Central radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,148,26,0.05) 0%, transparent 70%)" }}
+      />
+      {/* Top fade from surface */}
+      <div className="absolute top-0 inset-x-0 h-16 bg-linear-to-b from-surface/20 to-transparent pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-14"
         >
-          <span className="inline-block bg-gold/20 text-gold text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
+          <span className="inline-block bg-gold/15 text-gold text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-4 border border-gold/20">
             Why Choose Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
             The Noakhali Travel{" "}
             <span className="gradient-text">Difference</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
             We go beyond just processing paperwork — we build lasting relationships
             through trust, expertise, and exceptional service.
           </p>
@@ -80,51 +91,53 @@ export default function WhyUs() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {reasons.map((reason) => (
             <motion.div
               key={reason.title}
               variants={cardVariants}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 rounded-2xl p-7 transition-all duration-300 hover:bg-white/10 overflow-hidden"
+              whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 22 } }}
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-gold/40 rounded-2xl p-7 transition-colors duration-300 hover:bg-white/8 overflow-hidden"
             >
-              {/* Glow */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-all duration-500 blur-2xl" />
+              {/* Corner glow */}
+              <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-gold/6 group-hover:bg-gold/12 transition-all duration-500 blur-2xl pointer-events-none" />
 
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-gold/15 group-hover:bg-gold/25 flex items-center justify-center mb-5 transition-colors duration-300">
-                  <reason.icon className="w-7 h-7 text-gold" strokeWidth={1.8} />
+                <div className="w-13 h-13 rounded-2xl bg-gold/12 group-hover:bg-gold/22 flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-gold/20">
+                  <reason.icon className="w-6 h-6 text-gold" strokeWidth={1.7} />
                 </div>
-                <h3 className="font-bold text-white text-lg mb-3">{reason.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{reason.desc}</p>
+                <h3 className="font-bold text-white text-base mb-2.5 tracking-tight">{reason.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{reason.desc}</p>
               </div>
 
               {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-gold to-transparent group-hover:w-full transition-all duration-500 rounded-full" />
+              <div className="absolute bottom-0 left-0 h-px w-0 bg-linear-to-r from-gold to-transparent group-hover:w-full transition-all duration-500" />
             </motion.div>
           ))}
         </motion.div>
 
         {/* CTA banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.7, duration: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.7, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 flex justify-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gold/10 border border-gold/30 rounded-2xl px-8 py-6">
-            <p className="text-white text-lg font-semibold">
-              Ready to start your journey?
-            </p>
-            <a
+          <div className="flex flex-col sm:flex-row items-center gap-5 bg-white/5 border border-white/12 backdrop-blur-sm rounded-3xl px-10 py-7">
+            <div>
+              <p className="text-white font-semibold text-lg leading-tight">Ready to start your journey?</p>
+              <p className="text-white/40 text-sm mt-1">Get in touch — consultation is always free.</p>
+            </div>
+            <motion.a
               href="https://wa.me/8801740919659"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gold hover:bg-gold-light text-navy font-bold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-gold/30 hover:-translate-y-0.5 text-sm whitespace-nowrap"
+              whileHover={{ y: -2, transition: { type: "spring", stiffness: 400, damping: 20 } }}
+              className="bg-gold hover:bg-gold-light text-navy font-bold px-7 py-3 rounded-xl transition-colors duration-200 shadow-lg shadow-gold/25 hover:shadow-gold/40 text-sm whitespace-nowrap shrink-0"
             >
               Get Free Consultation
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>
