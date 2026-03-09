@@ -44,18 +44,18 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-5">
+            <div className="flex items-center gap-3 mb-5">
               <Image
                 src="/logo-icon.png"
                 alt="Noakhali Travel & Tours"
-                width={46}
-                height={46}
+                width={51}
+                height={51}
                 className="object-contain"
                 unoptimized
               />
               <div className="leading-tight">
-                <span className="block text-white font-bold text-lg leading-none">Noakhali</span>
-                <span className="block text-gold text-[11px] font-semibold tracking-widest uppercase leading-none mt-0.5">Travel &amp; Tours</span>
+                <span className="font-heading block text-white font-bold text-[1.24rem] leading-none">Noakhali</span>
+                <span className="font-heading block text-gold text-[12px] font-semibold tracking-widest uppercase leading-none mt-0.5">Travel &amp; Tours</span>
               </div>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6">

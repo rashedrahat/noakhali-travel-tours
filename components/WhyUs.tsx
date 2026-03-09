@@ -76,7 +76,7 @@ export default function WhyUs() {
           <span className="inline-block bg-gold/15 text-gold text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-4 border border-gold/20">
             Why Choose Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
             The Noakhali Travel{" "}
             <span className="gradient-text">Difference</span>
           </h2>

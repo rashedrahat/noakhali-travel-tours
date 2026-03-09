@@ -133,7 +133,7 @@ export default function Services() {
           <span className="inline-block bg-navy/8 text-navy text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-4 border border-navy/10">
             What We Offer
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4 leading-tight tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4 leading-tight tracking-tight">
             Our Professional <span className="gradient-text">Services</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">

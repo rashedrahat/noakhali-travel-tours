@@ -5,16 +5,25 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronDown, Plane, FileText, Users, Globe } from "lucide-react";
 import Image from "next/image";
 
-const desktopImages = [
-  { src: "/hero/haram-aerial-desktop.png",    pos: "center 35%",    overlay: "medium" },
-  { src: "/hero/kaaba-tawaf-desktop.png",     pos: "center center", overlay: "medium" },
-  { src: "/hero/madinah-bluehour-desktop.png",pos: "center 40%",    overlay: "light"  },
+type HeroSlide = {
+  src: string;
+  pos: string;
+  overlay: "light" | "medium";
+  alt: string;
+};
+
+const desktopImages: HeroSlide[] = [
+  { src: "/hero/Makkah-and-Madinah-Journey.webp", pos: "center center", overlay: "medium", alt: "Makkah and Madinah journey cover" },
+  { src: "/hero/dubai-city-burj-khalifa-skyline-silhouette-cityscape-dusk-3840x2160-5904.jpg", pos: "center center", overlay: "light", alt: "Dubai skyline with Burj Khalifa at dusk" },
+  { src: "/hero/32664-1920x1080-desktop-1080p-india-background.jpg", pos: "center center", overlay: "light", alt: "India landmark desktop travel background" },
 ];
 
-const mobileImages = [
-  { src: "/hero/kaaba-arch-mobile.png",       pos: "center center", overlay: "medium" },
-  { src: "/hero/kaaba-moon-mobile.png",       pos: "center center", overlay: "medium" },
-  { src: "/hero/madinah-minaret-mobile.png",  pos: "center center", overlay: "medium" },
+const mobileTabletImages: HeroSlide[] = [
+  { src: "/hero/makkah-n-madina.jpg", pos: "center center", overlay: "medium", alt: "Makkah and Madinah themed travel cover" },
+  { src: "/hero/dubai.jpg", pos: "center center", overlay: "light", alt: "Dubai skyline with Burj Khalifa at sunset" },
+  { src: "/hero/paris.jpg", pos: "center center", overlay: "light", alt: "Eiffel Tower at sunset with blossoms" },
+  { src: "/hero/swiz.jpg", pos: "center center", overlay: "light", alt: "Mountain train through Swiss valley" },
+  { src: "/hero/india.jpg", pos: "center center", overlay: "light", alt: "Taj Mahal reflection view" },
 ];
 
 const overlayStyles: Record<string, string> = {
@@ -49,16 +58,16 @@ const itemVariants: Variants = {
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const checkViewport = () => setIsMobileOrTablet(window.innerWidth < 1024);
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+    return () => window.removeEventListener("resize", checkViewport);
   }, []);
 
-  const images = isMobile ? mobileImages : desktopImages;
+  const images = isMobileOrTablet ? mobileTabletImages : desktopImages;
 
   const advance = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -92,7 +101,7 @@ export default function Hero() {
           >
             <Image
               src={images[currentIndex].src}
-              alt="Sacred mosque background"
+              alt={images[currentIndex].alt}
               fill
               className="object-cover"
               style={{ objectPosition: images[currentIndex].pos }}
@@ -123,17 +132,17 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-14 sm:pb-20 lg:pb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 sm:pt-44 lg:pt-44 xl:pt-48 pb-14 sm:pb-20 lg:pb-20 xl:pb-24 flex flex-col items-center text-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-2.5 sm:gap-4 lg:gap-3 w-full"
+          className="flex flex-col items-center gap-3 sm:gap-5 lg:gap-4 w-full"
         >
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-[1.9rem] leading-[1.1] sm:text-[2.75rem] lg:text-5xl font-extrabold tracking-tight text-white max-w-4xl drop-shadow-lg"
+            className="font-heading text-[2rem] leading-[1.02] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tight text-white max-w-5xl drop-shadow-lg"
           >
             Your Trusted Partner for
             <br className="hidden sm:block" />
@@ -144,7 +153,7 @@ export default function Hero() {
           {/* Subtext */}
           <motion.p
             variants={itemVariants}
-            className="text-white/70 text-sm sm:text-lg max-w-xl leading-relaxed drop-shadow"
+            className="text-white/80 text-[0.98rem] sm:text-xl max-w-3xl leading-relaxed drop-shadow"
           >
             From Hajj &amp; Umrah packages to international visa processing — we handle
             everything with professionalism and care, right from Noakhali.
@@ -216,25 +225,25 @@ export default function Hero() {
             />
           ))}
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        onClick={handleScroll}
-        className="absolute bottom-5 sm:bottom-8 left-0 right-0 flex flex-col items-center gap-1 text-white/50 hover:text-gold transition-colors cursor-pointer"
-        aria-label="Scroll to services"
-      >
-        <span className="text-xs tracking-widest uppercase">Explore</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        {/* Scroll indicator */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          onClick={handleScroll}
+          className="mt-6 sm:mt-8 lg:mt-6 flex flex-col items-center gap-1 text-white/50 hover:text-gold transition-colors cursor-pointer"
+          aria-label="Scroll to services"
         >
-          <ChevronDown className="w-5 h-5" />
-        </motion.div>
-      </motion.button>
+          <span className="text-xs tracking-widest uppercase">Explore</span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
+        </motion.button>
+      </div>
     </section>
   );
 }

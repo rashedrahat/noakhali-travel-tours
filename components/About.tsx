@@ -36,7 +36,7 @@ export default function About() {
             <span className="inline-block bg-gold/10 text-gold-dark text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-6 border border-gold/15">
               About Us
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-6 leading-tight tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-6 leading-tight tracking-tight">
               Your Trusted Gateway to{" "}
               <span className="gradient-text">the World</span>
             </h2>
@@ -118,8 +118,8 @@ export default function About() {
                     <span className="text-3xl">🕌</span>
                   </div>
                   <div>
-                    <p className="font-bold text-white text-lg leading-tight">Noakhali</p>
-                    <p className="text-gold text-sm font-medium">Travel &amp; Tours</p>
+                    <p className="font-heading font-bold text-white text-lg leading-tight">Noakhali</p>
+                    <p className="font-heading text-gold text-sm font-medium">Travel &amp; Tours</p>
                   </div>
                 </div>
 
